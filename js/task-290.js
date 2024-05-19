@@ -6,6 +6,8 @@
  * @param {string} s
  * @return {boolean}
  */
+
+// solution
 var wordPattern = function (pattern, s) {
   const keys = [...pattern];
   const values = s.split(" ");
@@ -25,6 +27,39 @@ var wordPattern = function (pattern, s) {
   }
   return true;
 };
+
+// imports
+import { quantity, exampleDate, userData } from "../index.js";
+
+// name inputs
+const quantityInput = 2;
+quantity(quantityInput, ["pattern", "s"]);
+
+// Examples
+// Example 1
+let example = ["abba", "dog cat cat dog"];
+exampleDate(1, quantityInput, example, wordPattern);
+
+// Example 2
+example = ["abba", "dog cat cat fish"];
+exampleDate(2, quantityInput, example, wordPattern);
+
+// Example 3
+example = ["aaa", "aa aa aa aa"];
+exampleDate(3, quantityInput, example, wordPattern);
+
+// You can enter your data for verification
+const result4 = document.querySelector(`#ex45`);
+const result5 = document.querySelector(`#ex55`);
+
+result4.addEventListener(
+  "click",
+  () => (result4.value = userData(4, quantityInput, wordPattern))
+);
+result5.addEventListener(
+  "click",
+  () => (result5.value = userData(5, quantityInput, wordPattern))
+);
 
 console.log(wordPattern("abba", "dog cat cat dog"));
 console.log(wordPattern("abba", "dog cat cat fish"));
