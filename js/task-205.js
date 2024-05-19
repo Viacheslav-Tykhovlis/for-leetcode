@@ -8,6 +8,7 @@
  * @return {boolean}
  */
 
+// solution
 var isIsomorphic = function (s, t) {
   let arrS = [];
   let arrT = [];
@@ -21,7 +22,6 @@ var isIsomorphic = function (s, t) {
       arrT.push(t[i]);
       continue;
     } else {
-
       if (
         arrS.findIndex((elem) => elem === s[i]) !==
         arrT.findIndex((elem) => elem === t[i])
@@ -33,7 +33,40 @@ var isIsomorphic = function (s, t) {
   return true;
 };
 
-// console.log(isIsomorphic("egg", "add"));
-// console.log(isIsomorphic("foo", "bar"));
+// imports
+import { quantity, exampleDate, userData } from "../index.js";
+
+// name inputs
+const quantityInput = 2;
+quantity(quantityInput, ["s", "t"]);
+
+// Examples
+// Example 1
+let example = ["egg", "add"];
+exampleDate(1, quantityInput, example, isIsomorphic);
+
+// Example 2
+example = ["foo", "bar"];
+exampleDate(2, quantityInput, example, isIsomorphic);
+
+// Example 3
+example = ["badc", "baba"];
+exampleDate(3, quantityInput, example, isIsomorphic);
+
+// You can enter your data for verification
+const result4 = document.querySelector(`#ex45`);
+const result5 = document.querySelector(`#ex55`);
+
+result4.addEventListener(
+  "click",
+  () => (result4.value = userData(4, quantityInput, isIsomorphic))
+);
+result5.addEventListener(
+  "click",
+  () => (result5.value = userData(5, quantityInput, isIsomorphic))
+);
+
+console.log(isIsomorphic("egg", "add"));
+console.log(isIsomorphic("foo", "bar"));
 // console.log(isIsomorphic("paper", "title"));
 console.log(isIsomorphic("badc", "baba"));

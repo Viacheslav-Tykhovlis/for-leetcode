@@ -29,20 +29,21 @@ var merge = function (nums1, m, nums2, n) {
 import { quantity, exampleDate, userData } from "../index.js";
 
 // name inputs
-quantity(4, ["nums1", "m", "nums2", "n"]);
+const quantityInput = 4;
+quantity(quantityInput, ["nums1", "m", "nums2", "n"]);
 
 // Examples
 // Example 1
 let example = [[1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3];
-exampleDate(1, 4, example, merge);
+exampleDate(1, quantityInput, example, merge);
 
 // Example 2
 example = [[1], 1, [], 0];
-exampleDate(2, 4, example, merge);
+exampleDate(2, quantityInput, example, merge);
 
 // Example 3
 example = [[0], 0, [1], 1];
-exampleDate(3, 4, example, merge);
+exampleDate(3, quantityInput, example, merge);
 
 // You can enter your data for verification
 const result4 = document.querySelector(`#ex45`);
@@ -50,9 +51,9 @@ const result5 = document.querySelector(`#ex55`);
 
 result4.addEventListener(
   "click",
-  () => (result4.value = userData(4, 4, merge))
+  () => (result4.value = userData(4, quantityInput, merge))
 );
 result5.addEventListener(
   "click",
-  () => (result5.value = userData(5, 4, merge))
+  () => (result5.value = userData(5, quantityInput, merge))
 );
