@@ -25,66 +25,34 @@ var merge = function (nums1, m, nums2, n) {
   return nums1;
 };
 
-// table
+// imports
+import { quantity, exampleDate, userData } from "../index.js";
+
 // name inputs
-function quantity(num, nameInput) {
-  for (let i = 1, j = 0; i <= num; i++, j++) {
-    const input = document.querySelector(`.input${i}`);
-    input.textContent = `${nameInput[j]}`;
-  }
-}
 quantity(4, ["nums1", "m", "nums2", "n"]);
-
-// displayed table fields for example
-function exampleCount(numExample, numField, input) {
-  for (let i = 1, j = 0; i <= numField; i++, j++) {
-    const field = document.querySelector(`.ex${numExample}${i}`);
-    field.textContent = `${input[j]}`;
-  }
-
-  const resultField = document.querySelector(`.ex${numExample}5`);
-  const result = merge(...input);
-  resultField.textContent = result;
-}
 
 // Examples
 // Example 1
 let example = [[1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3];
-// exampleCount(1, 4, example);
+exampleDate(1, 4, example, merge);
 
 // Example 2
 example = [[1], 1, [], 0];
-// exampleCount(2, 4, example);
+exampleDate(2, 4, example, merge);
 
 // Example 3
 example = [[0], 0, [1], 1];
-// exampleCount(3, 4, example);
+exampleDate(3, 4, example, merge);
 
 // You can enter your data for verification
-
 const result4 = document.querySelector(`#ex45`);
 const result5 = document.querySelector(`#ex55`);
 
-result4.addEventListener("click", () => (result4.value = userData(4, 4)));
-result5.addEventListener("click", () => (result5.value = userData(5, 4)));
-
-function userData(numExample, numField) {
-  const input = [];
-  for (let i = 1, j = 0; i <= numField; i++, j++) {
-    const field = document.querySelector(`#ex${numExample}${i}`);
-
-    switch (field.name) {
-      case "array":
-        const arr = field.value.split(",");
-        const data = arr.map((elem) => +elem);
-        input.push(data);
-        break;
-
-      case "nummer":
-        input.push(+field.value);
-        break;
-    }
-  }
-  const result = merge(...input);
-  return result;
-}
+result4.addEventListener(
+  "click",
+  () => (result4.value = userData(4, 4, merge))
+);
+result5.addEventListener(
+  "click",
+  () => (result5.value = userData(5, 4, merge))
+);
