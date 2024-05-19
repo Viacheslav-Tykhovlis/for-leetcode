@@ -5,6 +5,7 @@
  * @return {number}
  */
 
+// solution
 var removeDuplicates = function (nums) {
   let index = 0;
   for (let i = 0; i < nums.length; i++) {
@@ -15,6 +16,38 @@ var removeDuplicates = function (nums) {
   }
   return index;
 };
+
+// imports
+import { quantity, exampleDate, userData } from "../index.js";
+
+// name inputs
+quantity(1, ["nums"]);
+
+// Examples
+// Example 1
+let example = [[1, 1, 2]];
+exampleDate(1, 1, example, removeDuplicates);
+
+// Example 2
+example = [[0, 0, 1, 1, 1, 2, 2, 3, 3, 4]];
+exampleDate(2, 1, example, removeDuplicates);
+
+// Example 3
+example = [[0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5]];
+exampleDate(3, 1, example, removeDuplicates);
+
+// You can enter your data for verification
+const result4 = document.querySelector(`#ex45`);
+const result5 = document.querySelector(`#ex55`);
+
+result4.addEventListener(
+  "click",
+  () => (result4.value = userData(4, 1, removeDuplicates))
+);
+result5.addEventListener(
+  "click",
+  () => (result5.value = userData(5, 1, removeDuplicates))
+);
 
 console.log(removeDuplicates([1, 1, 2]));
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
