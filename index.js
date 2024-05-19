@@ -25,10 +25,15 @@ export function userData(numExample, numField, mainFunction) {
     const field = document.querySelector(`#ex${numExample}${i}`);
 
     switch (field.name) {
-      case "array":
-        const arr = field.value.split(",");
-        const data = arr.map((elem) => +elem);
-        input.push(data);
+      case "arrayNum":
+        const arrNum = field.value.split(",");
+        const dataNum = arrNum.map((elem) => +elem);
+        input.push(dataNum);
+        break;
+
+      case "arrayStr":
+        const arrStr = field.value.split(",");
+        input.push(arrStr);
         break;
 
       case "nummer":
